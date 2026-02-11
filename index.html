@@ -4,71 +4,67 @@
   <meta charset="UTF-8">
   <title>Acil Sağlık Bilgisi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body { font-family: Arial, sans-serif; background:#fff; color:#000; padding:20px; }
-    .alert { background:#c40000; color:#fff; padding:15px; font-size:22px; font-weight:bold; text-align:center; }
-    .section { margin-top:20px; }
-    .label { font-weight:bold; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
 
-<div class="alert">ACİL SAĞLIK BİLGİSİ</div>
+  <div class="alert">ACİL SAĞLIK BİLGİSİ</div>
 
-<div class="section">
-  <div class="label">Ad:</div>
-  <div id="name">—</div>
-</div>
-
-<div class="section">
-  <div class="label">Kan Grubu:</div>
-  <div id="blood_type">—</div>
-</div>
-
-<div class="section">
-  <div class="label" >Alerjiler:</div>
-  <div id="alergies">—</div>
-</div>
-
-<div class="section">
-  <div class="label">Acil İletişim:</div>
-  <a id="tell_no" href="tel:+90XXXXXXXXX">Ara</a>
-</div>
-
-<button class="button" id="edit_button">Bilgileri Düzenlemek İstiyorum</button>
-
-<form id="password_form">
   <div class="section">
-    <div class="label">Şifre</div>
-    <input type="number" id="password_input">
-    <input type="submit" value="Gir">
+    <div class="label">Ad:</div>
+    <div id="name">—</div>
   </div>
-</form>
 
-<form id="edit_form">
-<div class="section">
-  <div class="label">Ad:</div>
-  <input type="text" id="name_input">
-</div>
+  <div class="section">
+    <div class="label">Kan Grubu:</div>
+    <div id="blood_type">—</div>
+  </div>
 
-<div class="section">
-  <div class="label">Kan Grubu:</div>
-  <input type="text" id="blood_type_input">
-</div>
+  <div class="section">
+    <div class="label" >Alerjiler:</div>
+    <div id="alergies">—</div>
+  </div>
 
-<div class="section">
-  <div class="label">Alerjiler:</div>
-  <input type="text" id="alergies_input">
-</div>
+  <div class="section">
+    <div class="label">Acil İletişim:</div>
+    <a id="tell_no" href="tel:+90XXXXXXXXX">Ara</a>
+  </div>
 
-<div class="section">
-  <div class="label">Acil İletişim:</div>
-  <input type="tel" id="cell_no_input">
-</div>
+  <button class="button" id="edit_button">Bilgileri Düzenlemek İstiyorum</button>
 
-<input type="submit" value="Bitti">
-</form>
+  <form id="password_form">
+    <div class="section">
+      <div class="label">Şifre</div>
+      <input type="number" id="password_input">
+      <input type="submit" value="Gir">
+    </div>
+  </form>
 
+  <form id="edit_form">
+  <div class="section">
+    <div class="label">Ad:</div>
+    <input type="text" id="name_input">
+  </div>
 
+  <div class="section">
+    <div class="label">Kan Grubu:</div>
+    <input type="text" id="blood_type_input">
+  </div>
+
+  <div class="section">
+    <div class="label">Alerjiler:</div>
+    <input type="text" id="alergies_input">
+  </div>
+
+  <div class="section">
+    <div class="label">Acil İletişim:</div>
+    <input type="tel" id="cell_no_input">
+  </div>
+
+  <input type="submit" value="Bitti">
+  </form>
+
+  </div>
 </body>
 </html>
