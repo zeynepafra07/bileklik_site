@@ -17,23 +17,58 @@
 
 <div class="section">
   <div class="label">Ad:</div>
-  <div>—</div>
+  <div id="name">—</div>
 </div>
 
 <div class="section">
   <div class="label">Kan Grubu:</div>
-  <div>—</div>
+  <div id="blood_type">—</div>
 </div>
 
 <div class="section">
-  <div class="label">Alerjiler:</div>
-  <div>—</div>
+  <div class="label" >Alerjiler:</div>
+  <div id="alergies">—</div>
 </div>
 
 <div class="section">
   <div class="label">Acil İletişim:</div>
-  <a href="tel:+90XXXXXXXXX">Ara</a>
+  <a id="tell_no" href="tel:+90XXXXXXXXX">Ara</a>
 </div>
+
+<button class="button" id="edit_button">Bilgileri Düzenlemek İstiyorum</button>
+
+<form id="password_form">
+  <div class="section">
+    <div class="label">Şifre</div>
+    <input type="number" id="password_input">
+    <input type="submit" value="Gir">
+  </div>
+</form>
+
+<form id="edit_form">
+<div class="section">
+  <div class="label">Ad:</div>
+  <input type="text" id="name_input">
+</div>
+
+<div class="section">
+  <div class="label">Kan Grubu:</div>
+  <input type="text" id="blood_type_input">
+</div>
+
+<div class="section">
+  <div class="label">Alerjiler:</div>
+  <input type="text" id="alergies_input">
+</div>
+
+<div class="section">
+  <div class="label">Acil İletişim:</div>
+  <input type="tel" id="cell_no_input">
+</div>
+
+<input type="submit" value="Bitti">
+</form>
+
 
 </body>
 </html>
