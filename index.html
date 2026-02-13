@@ -33,38 +33,117 @@
 
   <button class="button" id="edit_button">Bilgileri Düzenlemek İstiyorum</button>
 
-  <form id="password_form">
+  <form id="password_form" class="hidden">
     <div class="section">
       <div class="label">Şifre</div>
-      <input type="number" id="password_input">
+      <input type="text" id="password_input">
       <input type="submit" value="Gir">
+      <p id="error" style="color:red;" class="hidden">Şifre yanlış</p>
     </div>
   </form>
 
-  <form id="edit_form">
+  <form id="edit_form" class="hidden">
   <div class="section">
     <div class="label">Ad:</div>
-    <input type="text" id="name_input">
+    <input type="text" id="name_input" placeholder="Yeni ismi giriniz...">
   </div>
 
   <div class="section">
     <div class="label">Kan Grubu:</div>
-    <input type="text" id="blood_type_input">
+    <input type="text" id="blood_type_input" placeholder="Yeni kan grubu giriniz...">
   </div>
 
   <div class="section">
     <div class="label">Alerjiler:</div>
-    <input type="text" id="alergies_input">
+    <input type="text" id="alergies_input" placeholder="Yeni alerji giriniz...">
   </div>
 
   <div class="section">
     <div class="label">Acil İletişim:</div>
-    <input type="tel" id="cell_no_input">
+    <input type="tel" id="cell_no_input" placeholder="Yeni acil iletişim numarası giriniz...">
   </div>
 
   <input type="submit" value="Bitti">
   </form>
 
   </div>
+
+<script>
+  const btn = document.getElementById("edit_button");
+
+  const passwordForm = document.getElementById("password_form");
+  const editForm = document.getElementById("edit_form");
+
+  const passwordInput = document.getElementById("password_input");
+  const error = document.getElementById("error");
+
+  const nameText = document.getElementById("name");
+  const bloodText = document.getElementById("blood_type");
+  const alergiesText = document.getElementById("alergies");
+  const telLink = document.getElementById("tell_no");
+
+  const nameInput = document.getElementById("name_input");
+  const bloodInput = document.getElementById("blood_type_input");
+  const alergiesInput = document.getElementById("alergies_input");
+  const telInput = document.getElementById("cell_no_input");
+
+  const correctPassword = "recep123";
+
+  // 🔹 Sayfa açılınca localStorage'dan yükle
+  window.addEventListener("load", () => {
+    if (localStorage.getItem("name")) {
+      nameText.textContent = localStorage.getItem("name");
+      bloodText.textContent = localStorage.getItem("blood");
+      alergiesText.textContent = localStorage.getItem("alergies");
+
+      const tel = localStorage.getItem("tel");
+      telLink.textContent = tel;
+      telLink.href = "tel:" + tel;
+    }
+  });
+
+  // 🔹 Düzenle butonu
+  btn.addEventListener("click", () => {
+    passwordForm.classList.toggle("hidden");
+    error.classList.add("hidden");
+    passwordInput.value = "";
+  });
+
+  // 🔹 Şifre kontrol
+  passwordForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (passwordInput.value === correctPassword) {
+      passwordForm.classList.add("hidden");
+      editForm.classList.remove("hidden");
+    } else {
+      error.classList.remove("hidden");
+    }
+  });
+
+  // 🔹 Edit form submit
+  editForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Üstteki alanları güncelle
+    nameText.textContent = nameInput.value || "—";
+    bloodText.textContent = bloodInput.value || "—";
+    alergiesText.textContent = alergiesInput.value || "—";
+
+    if (telInput.value) {
+      telLink.textContent = telInput.value;
+      telLink.href = "tel:" + telInput.value;
+    }
+
+    // localStorage'a kaydet
+    localStorage.setItem("name", nameInput.value);
+    localStorage.setItem("blood", bloodInput.value);
+    localStorage.setItem("alergies", alergiesInput.value);
+    localStorage.setItem("tel", telInput.value);
+
+    // Kilitle
+    editForm.classList.add("hidden");
+  });
+</script>
 </body>
 </html>
